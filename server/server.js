@@ -56,6 +56,16 @@ const resolvers = {
 const pubsub = new PubSub();
 const server = new GraphQLServer({ typeDefs, resolvers, context: { pubsub } });
 
-server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
-});
+// server.start({ port: process.env.PORT || 4000 })=> {
+//   console.log(`🚀 Server ready at ${url}`);
+// });
+
+const options = {
+  port: process.env.PORT || 4000,
+};
+
+server.start(options, ({ port }) =>
+  console.log(
+    `Server started, listening on port ${port} for incoming requests.`
+  )
+);

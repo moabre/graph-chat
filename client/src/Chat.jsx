@@ -15,7 +15,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const link = new WebSocketLink({
-  uri: `ws://graph-chat.herokuapp.com/`,
+  uri: `wss://graph-chat.herokuapp.com/`,
   options: {
     reconnect: true,
   },

@@ -15,7 +15,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const link = new WebSocketLink({
-  uri: `ws://localhost:4000/`,
+  uri: `ws://graph-chat.herokuapp.com/`,
   options: {
     reconnect: true,
   },
@@ -23,7 +23,7 @@ const link = new WebSocketLink({
 
 const client = new ApolloClient({
   link,
-  uri: 'http://localhost:4000/',
+  uri: 'https://graph-chat.herokuapp.com/',
   cache: new InMemoryCache(),
 });
 

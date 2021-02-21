@@ -15,7 +15,7 @@ const typeDefs = `
 
  type Mutation {
   postMessage(user: String!, content: String!): ID!
- }
+ }  
 
  type Subscription {
    messages: [Message!]
@@ -58,9 +58,6 @@ const server = new GraphQLServer({ typeDefs, resolvers, context: { pubsub } });
 
 const options = {
   port: process.env.PORT || 4000,
-  endpoint: '/graphql',
-  subscriptions: '/subscriptions',
-  playground: '/playground',
 };
 
 server.start(options, ({ port }) =>

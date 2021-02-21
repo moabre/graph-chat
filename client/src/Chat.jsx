@@ -93,7 +93,7 @@ const Messages = ({ user }) => {
 
 const Chat = () => {
   const [name, setName] = React.useState({
-    user: 'AR',
+    user: 'Name',
     content: '',
   });
   const [postMessage] = useMutation(POST_MESSAGE);
@@ -111,7 +111,7 @@ const Chat = () => {
   };
 
   return (
-    <Container>
+    <Container className='main-container'>
       <Messages user={name.user} />
       <Row>
         <Col xs={2} style={{ padding: 0 }}>
